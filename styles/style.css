@@ -27,6 +27,7 @@ a
 
 #header
 {
+  pointer-events: none;
   position: absolute;
   left: 0;
   right: 0;
@@ -38,6 +39,7 @@ a
 
 #logo
 {
+  pointer-events: none;
   font-size: 30vw;
   margin: 0;
   padding: 0;
@@ -51,6 +53,7 @@ a
 
 #title
 {
+  pointer-events: none;
   font-size: 8vw;
   text-decoration: overline;
   padding: 0;
@@ -65,6 +68,7 @@ a
 
 #info
 {
+  pointer-events: none;
   font-size: 1.75vw;
   position: absolute;
   bottom: 2vh;

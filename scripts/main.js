@@ -35,6 +35,9 @@ function init()
 	renderer.setSize( window.innerWidth, window.innerHeight );
   renderer.domElement.id = "viewport";
 	document.body.appendChild( renderer.domElement );
+  document.ontouchmove = function(event){
+    event.preventDefault();
+  }
 	//
 	window.addEventListener( 'resize', onWindowResize, false );
 	window.addEventListener( 'mousemove', onMouseMove, false );
