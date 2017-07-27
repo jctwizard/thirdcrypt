@@ -2,6 +2,7 @@ setTimeout(function() { window.scrollTo(0, 1) }, 100);
 
 var camera, scene, renderer, bufferTexture, planeScene, planeCamera;
 var mesh, planeMesh;
+var lastx, lasty;
 
 init();
 animate();
@@ -44,6 +45,8 @@ function init()
 	//
 	window.addEventListener( 'resize', onWindowResize, false );
 	window.addEventListener( 'mousemove', onMouseMove, false );
+	window.addEventListener( 'touchmove', onTouchMove, false );
+	window.addEventListener( 'touchstart', onTouchStart, false );
 
 }
 
@@ -54,6 +57,28 @@ function onMouseMove(event)
 
 		camera.rotation.y -= movementX * 0.002;
 		camera.rotation.x -= movementY * 0.002;
+}
+
+function onTouchMove(e)
+{
+  e.preventDefault();
+
+  var touchobj = e.changedTouches[0] // reference first touch point for this event
+  var x = parseInt(touchobj.clientX);
+  var y = parseInt(touchobj.clienty);
+  var dx = x - lastx;
+  var dy = y - lasty;
+
+	camera.rotation.y -= dx * 0.002;
+	camera.rotation.x -= dy * 0.002;
+
+  lastx = x;
+  lasty = y;
+}
+
+function onTouchStart(e)
+{
+  e.preventDefault();
 }
 
 function onWindowResize()
