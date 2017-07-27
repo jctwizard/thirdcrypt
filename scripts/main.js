@@ -47,6 +47,8 @@ function init()
 	window.addEventListener( 'mousemove', onMouseMove, false );
 	window.addEventListener( 'touchmove', onTouchMove, false );
 	window.addEventListener( 'touchstart', onTouchStart, false );
+	window.addEventListener( 'touchend', onTouchEnd, false );
+	window.addEventListener( 'touchcancel', onTouchEnd, false );
 
 }
 
@@ -87,6 +89,19 @@ function onTouchMove(e)
 
 function onTouchStart(e)
 {
+  var touchobj = e.changedTouches[0] // reference first touch point for this event
+  var lastx = parseInt(touchobj.clientX);
+  var lasty = parseInt(touchobj.clientY);
+
+  e.preventDefault();
+}
+
+function onTouchEnd(e)
+{
+  var touchobj = e.changedTouches[0] // reference first touch point for this event
+  var lastx = null;
+  var lasty = null;
+
   e.preventDefault();
 }
 
