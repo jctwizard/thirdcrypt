@@ -65,7 +65,7 @@ function onTouchMove(e)
 
   var touchobj = e.changedTouches[0] // reference first touch point for this event
   var x = parseInt(touchobj.clientX);
-  var y = parseInt(touchobj.clienty);
+  var y = parseInt(touchobj.clientY);
 
   if (lastx == null)
   {
@@ -76,10 +76,10 @@ function onTouchMove(e)
   var dx = x - lastx;
   var dy = y - lasty;
 
-	//camera.rotation.y -= dx * 0.0002;
-	//camera.rotation.x -= dy * 0.0002;
+	camera.rotation.y -= dx * 0.0002;
+	camera.rotation.x -= dy * 0.0002;
 
-  document.getElementById("debug").innerHTML = "x: " + x.toString() + ", y: " + y.toString() + ", dx: " + dx.toString() + ", dy: " + dy.toString();
+  //document.getElementById("debug").innerHTML = "x: " + x.toString() + ", y: " + y.toString() + ", dx: " + dx.toString() + ", dy: " + dy.toString();
 
   lastx = x;
   lasty = y;
