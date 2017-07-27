@@ -1,0 +1,58 @@
+html, body
+{
+  background-color: #000000;
+  color: #FFFFFF;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  font-family: monospace;
+  text-align: center;
+}
+
+#header
+{
+    animation-name: fadeout;
+    animation-duration: 2s;
+    animation-delay: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+#title
+{
+  font-size: 3vw;
+  text-decoration: overline;
+}
+
+#info
+{
+  font-size: 2vw;
+  position: absolute;
+  bottom: 2vh;
+  left: 0;
+  right: 0;
+  text-decoration: overline;
+
+  animation-name: fadeout;
+  animation-duration: 2s;
+  animation-delay: 8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#logo
+{
+  font-size: 5vw;
+}
+
+#strike
+{
+  text-decoration: line-through;
+}
+
+@keyframes fadeout
+{
+    0%    { color: white; }
+    100%  { color: black; }
+}
