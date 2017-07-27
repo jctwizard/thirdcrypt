@@ -76,8 +76,8 @@ function onTouchMove(e)
   var dx = x - lastx;
   var dy = y - lasty;
 
-	camera.rotation.y -= dx * 0.0002;
-	camera.rotation.x -= dy * 0.0002;
+	camera.rotation.y -= dx * 0.002;
+	camera.rotation.x -= dy * 0.002;
 
   //document.getElementById("debug").innerHTML = "x: " + x.toString() + ", y: " + y.toString() + ", dx: " + dx.toString() + ", dy: " + dy.toString();
 
