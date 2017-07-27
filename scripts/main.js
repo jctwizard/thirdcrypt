@@ -2,7 +2,7 @@ setTimeout(function() { window.scrollTo(0, 1) }, 100);
 
 var camera, scene, renderer, bufferTexture, planeScene, planeCamera;
 var mesh, planeMesh;
-var lastx, lasty;
+var lastx = null, lasty = null;
 
 init();
 animate();
@@ -66,6 +66,13 @@ function onTouchMove(e)
   var touchobj = e.changedTouches[0] // reference first touch point for this event
   var x = parseInt(touchobj.clientX);
   var y = parseInt(touchobj.clienty);
+
+  if (lastx == null)
+  {
+    lastx = x;
+    lasty = y;
+  }
+
   var dx = x - lastx;
   var dy = y - lasty;
 
