@@ -90,8 +90,8 @@ function onTouchMove(e)
 function onTouchStart(e)
 {
   var touchobj = e.changedTouches[0] // reference first touch point for this event
-  var lastx = parseInt(touchobj.clientX);
-  var lasty = parseInt(touchobj.clientY);
+  lastx = parseInt(touchobj.clientX);
+  lasty = parseInt(touchobj.clientY);
 
   e.preventDefault();
 }
@@ -99,8 +99,8 @@ function onTouchStart(e)
 function onTouchEnd(e)
 {
   var touchobj = e.changedTouches[0] // reference first touch point for this event
-  var lastx = null;
-  var lasty = null;
+  lastx = null;
+  lasty = null;
 
   e.preventDefault();
 }
