@@ -10,7 +10,7 @@ function init()
 {
 	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
 	camera.position.z = 400;
-	scene = new THREE.Scene();
+  scene = new THREE.Scene();
 	var geometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
   var texture = new THREE.TextureLoader().load( 'images/rock.jpg');
   texture.minFilter = THREE.NearestFilter;
@@ -37,7 +37,17 @@ function init()
 	document.body.appendChild( renderer.domElement );
 	//
 	window.addEventListener( 'resize', onWindowResize, false );
+	window.addEventListener( 'mousemove', onMouseMove, false );
 
+}
+
+function onMouseMove(event)
+{
+		var movementX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
+		var movementY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
+
+		camera.rotation.y -= movementX * 0.002;
+		camera.rotation.x -= movementY * 0.002;
 }
 
 function onWindowResize()
